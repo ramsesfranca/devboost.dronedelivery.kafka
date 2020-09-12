@@ -97,7 +97,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DroneDelivery.Pagamento.Application.Tests", "tests\Pagamento\DroneDelivery.Pagamento.Application.Tests\DroneDelivery.Pagamento.Application.Tests.csproj", "{41D3DA73-163A-49EB-B17A-8F040FA4DD1E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pedido-Producer", "Pedido-Producer", "{53E91903-29F4-40F9-A910-D4DD5B7BD810}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pedido", "Pedido", "{53E91903-29F4-40F9-A910-D4DD5B7BD810}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DroneDelivery.PedidoProducer", "src\Pedido\DroneDelivery.PedidoProducer\DroneDelivery.PedidoProducer.csproj", "{3E717016-477F-43D5-880B-9972D2CCCD52}"
 EndProject
