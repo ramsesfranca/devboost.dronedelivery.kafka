@@ -1,6 +1,6 @@
-﻿namespace DroneDelivery.PedidoConsumerTrigger.Dto
+﻿namespace DroneDelivery.PedidoConsumerTrigger.Model
 {
-    public class PedidoDto
+    public class PedidoCriadoEvent
     {
         public double Peso { get; set; }
 
