@@ -1,4 +1,6 @@
-﻿namespace DroneDelivery.PedidoProducer.Dto
+﻿using System;
+
+namespace DroneDelivery.PedidoProducer.Dto
 {
     public class CriarPedidoDto
     {
@@ -6,5 +8,11 @@
 
         public double Valor { get; set; }
 
+        public Guid Id { get; private set; }
+
+        public CriarPedidoDto()
+        {
+            Id = Guid.NewGuid();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace DroneDelivery.PedidoConsumerTrigger.Dto
+﻿namespace DroneDelivery.PedidoConsumerTrigger.Model
 {
     public class TokenDto
     {
