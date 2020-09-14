@@ -11,15 +11,15 @@ namespace DroneDelivery.PedidoConsumerTrigger.Command
     public class Autorizacao : IAutorizacao
     {
         private readonly IHttpClientFactory _factory;
-        private readonly  string _email ;
-        private readonly string _password;
+        private readonly  string email ;
+        private readonly string password;
 
 
         public Autorizacao(IHttpClientFactory factory)
         {
             _factory = factory;
-            _email = Environment.GetEnvironmentVariable("Login");
-            _password = Environment.GetEnvironmentVariable("Senha");
+            email = Environment.GetEnvironmentVariable("Login");
+            password = Environment.GetEnvironmentVariable("Senha");
 
         }
         public  async Task<string>   GetToken()
@@ -27,8 +27,8 @@ namespace DroneDelivery.PedidoConsumerTrigger.Command
             var client = _factory.CreateClient(HttpClientName.PedidoEndPoint);
             var loginResponse = await client.PostAsJsonAsync("/api/usuarios/login", new
             {
-                _email,
-                _password
+                email,
+                password
             });
 
             loginResponse.EnsureSuccessStatusCode();
