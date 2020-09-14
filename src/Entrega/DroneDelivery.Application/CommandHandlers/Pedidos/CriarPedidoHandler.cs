@@ -47,7 +47,7 @@ namespace DroneDelivery.Application.CommandHandlers.Pedidos
                 return _response;
             }
 
-            var pedido = Pedido.Criar(request.Peso, request.Valor, cliente);
+            var pedido = Pedido.Criar(request.Id, request.Peso, request.Valor, cliente);
             pedido.AtualizarStatusPedido(PedidoStatus.AguardandoPagamento);
 
             //publica o evento para o bus

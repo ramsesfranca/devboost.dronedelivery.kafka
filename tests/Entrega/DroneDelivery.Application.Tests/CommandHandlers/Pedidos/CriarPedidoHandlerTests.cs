@@ -35,7 +35,7 @@ namespace DroneDelivery.Application.Tests.CommandHandlers.Pedidos
         public async Task Pedido_AoCriarumPedidoComComandoInvalido_RetornarNotificacoesComFalha()
         {
             // Arrange
-            var command = new CriarPedidoCommand(0, 0);
+            var command = new CriarPedidoCommand(Guid.Empty, 0, 0);
 
             // Act
             var responseResult = await _handler.Handle(command, CancellationToken.None);
@@ -49,7 +49,7 @@ namespace DroneDelivery.Application.Tests.CommandHandlers.Pedidos
         public async Task Pedido_AoCriarumPedidoComClienteNaoAutenticado_RetornarNotificacoesComFalha()
         {
             // Arrange
-            var command = new CriarPedidoCommand(1000, 1000);
+            var command = new CriarPedidoCommand(Guid.NewGuid(), 1000, 1000);
 
             var usuarioId = Guid.NewGuid();
 
@@ -74,7 +74,7 @@ namespace DroneDelivery.Application.Tests.CommandHandlers.Pedidos
         public async Task Pedido_AoCriarUmPedido_RetornarSucesso()
         {
             // Arrange
-            var command = new CriarPedidoCommand(1000, 1000);
+            var command = new CriarPedidoCommand(Guid.NewGuid(), 1000, 1000);
 
             var usuarioId = Guid.NewGuid();
 

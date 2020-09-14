@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace DroneDelivery.PedidoConsumerTrigger.Contrato
 {
-    public interface ICommand
+    public interface IPedidoCommand
     {
         Task<bool> PedidoAsync( PedidoCriadoEvent @event);
     }

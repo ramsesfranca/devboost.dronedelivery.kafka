@@ -2,7 +2,7 @@
 
 namespace DroneDelivery.PedidoConsumerTrigger.Contrato
 {
-    public interface IAutorizacao
+    public interface IUsuarioAutenticacao
     {
         Task<string> GetToken();
     }

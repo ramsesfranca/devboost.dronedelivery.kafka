@@ -25,8 +25,9 @@ namespace DroneDelivery.Domain.Models
 
         protected Pedido() { }
 
-        private Pedido(double peso, double valor, Usuario usuario)
+        private Pedido(Guid id, double peso, double valor, Usuario usuario)
         {
+            Id = id;
             Peso = peso;
             Valor = valor;
             Usuario = usuario;
@@ -34,9 +35,9 @@ namespace DroneDelivery.Domain.Models
             Status = PedidoStatus.Pendente;
         }
 
-        public static Pedido Criar(double peso, double valor, Usuario usuario)
+        public static Pedido Criar(Guid id, double peso, double valor, Usuario usuario)
         {
-            return new Pedido(peso, valor, usuario);
+            return new Pedido(id, peso, valor, usuario);
         }
 
         public void AtualizarStatusPedido(PedidoStatus status)

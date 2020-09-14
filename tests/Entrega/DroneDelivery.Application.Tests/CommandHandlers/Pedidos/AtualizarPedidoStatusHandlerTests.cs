@@ -65,7 +65,7 @@ namespace DroneDelivery.Application.Tests.CommandHandlers.Pedidos
                     .Returns(Task.FromResult(usuario));
 
             //obter pedido
-            var pedido = Pedido.Criar(1000, 1000, usuario);
+            var pedido = Pedido.Criar(Guid.NewGuid(), 1000, 1000, usuario);
             _mocker.GetMock<IUnitOfWork>()
                     .Setup(p => p.Pedidos.ObterPorIdAsync(pedido.Id))
                     .Returns(Task.FromResult(pedido));
@@ -97,7 +97,7 @@ namespace DroneDelivery.Application.Tests.CommandHandlers.Pedidos
             var usuario = Usuario.Criar("test", "test@test.com", 0, 0, UsuarioRole.Cliente);
 
             //obter pedido
-            var pedido = Pedido.Criar(1000, 1000, usuario);
+            var pedido = Pedido.Criar(Guid.NewGuid(), 1000, 1000, usuario);
             _mocker.GetMock<IUnitOfWork>()
                     .Setup(p => p.Pedidos.ObterPorIdAsync(pedido.Id))
                     .Returns(Task.FromResult(pedido));
@@ -131,7 +131,7 @@ namespace DroneDelivery.Application.Tests.CommandHandlers.Pedidos
             var usuario = Usuario.Criar("test", "test@test.com", 0, 0, UsuarioRole.Cliente);
 
             //obter pedido
-            var pedido = Pedido.Criar(1000, 1000, usuario);
+            var pedido = Pedido.Criar(Guid.NewGuid(), 1000, 1000, usuario);
             pedido.AtualizarStatusPedido(PedidoStatus.AguardandoPagamento);
             _mocker.GetMock<IUnitOfWork>()
                     .Setup(p => p.Pedidos.ObterPorIdAsync(pedido.Id))
@@ -192,7 +192,7 @@ namespace DroneDelivery.Application.Tests.CommandHandlers.Pedidos
             var usuario = Usuario.Criar("test", "test@test.com", 0, 0, UsuarioRole.Cliente);
 
             //obter pedido
-            var pedido = Pedido.Criar(1000, 1000, usuario);
+            var pedido = Pedido.Criar(Guid.NewGuid(), 1000, 1000, usuario);
             pedido.AtualizarStatusPedido(PedidoStatus.AguardandoPagamento);
             _mocker.GetMock<IUnitOfWork>()
                     .Setup(p => p.Pedidos.ObterPorIdAsync(pedido.Id))

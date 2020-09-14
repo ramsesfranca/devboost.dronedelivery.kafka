@@ -47,7 +47,7 @@ namespace DroneDelivery.Api.Tests.BDD
         public async Task DadoQueEsteDronePossuaUmPedidoPago()
         {
             //criar pedido
-            var command = new CriarPedidoCommand(1000, 999);
+            var command = new CriarPedidoCommand(Guid.NewGuid(), 1000, 999);
             await _testsFixture.Client.PostAsJsonAsync("/api/pedidos", command);
 
             var response = await _testsFixture.Client.GetAsync("/api/pedidos");

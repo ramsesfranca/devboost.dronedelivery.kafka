@@ -2,25 +2,33 @@
 using DroneDelivery.Shared.Utility;
 using Flunt.Validations;
 using Newtonsoft.Json;
+using System;
 
 namespace DroneDelivery.Application.Commands.Pedidos
 {
     public class CriarPedidoCommand : Command
     {
+        public Guid Id { get; set; }
+
         public double Peso { get; }
 
         public double Valor { get; }
 
-    
+
         [JsonConstructor]
-        public CriarPedidoCommand(double peso, double valor)
+        public CriarPedidoCommand(Guid id, double peso, double valor)
         {
+            Id = id;
             Peso = peso;
             Valor = valor;
         }
 
         public void Validate()
         {
+
+            AddNotifications(new Contract()
+                .Requires()
+                .IsNotEmpty(Id, nameof(Id), "O Id do Pedido não pode ser vazio"));
 
             AddNotifications(new Contract()
                 .Requires()

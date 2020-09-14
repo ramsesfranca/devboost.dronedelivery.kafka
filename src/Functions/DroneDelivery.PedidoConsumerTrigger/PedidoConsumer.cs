@@ -11,27 +11,27 @@ namespace DroneDelivery.PedidoConsumerTrigger
 {
     public class PedidoConsumer
     {
-        private readonly ICommand _command;
+        private readonly IPedidoCommand _pedidoCommand;
 
-        public PedidoConsumer(ICommand command)
+        public PedidoConsumer(IPedidoCommand pedidoCommand)
         {
-            _command = command;
+            _pedidoCommand = pedidoCommand;
         }
-        
+
         [FunctionName(nameof(PedidoConsumer))]
-        public  async Task PedidoConsumerGroupDroneDelivery(
+        public async Task PedidoConsumerTrigger(
             [KafkaTrigger(
-            "localhost:9092",
-            "pedido-criado-evento",
-            ConsumerGroup = "pedido-criado-evento")]
+            "%BootstrapServers%",
+            "%Topic%",
+            ConsumerGroup = "%ConsumerGroup%")]
             KafkaEventData<string> kafkaEvent,
             ILogger logger)
         {
             logger.LogInformation(kafkaEvent.Value.ToString());
-            var postData = JsonConvert.DeserializeObject<PedidoCriadoEvent>(kafkaEvent.Value);
-            await  _command.PedidoAsync(postData);
-                      
-          
+
+            var @event = JsonConvert.DeserializeObject<PedidoCriadoEvent>(kafkaEvent.Value);
+
+            await _pedidoCommand.PedidoAsync(@event);
         }
 
     }

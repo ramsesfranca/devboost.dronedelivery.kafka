@@ -1,0 +1,14 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "BootstrapServers": "localhost:9092",
+    "Topic": "pedido-criado-evento",
+    "ConsumerGroup": "cg-dronedelivery-pedido-entrega",
+    "UrlBaseEntrega": "https://localhost:44352",
+
+    "App:Login": "admin@test.com",
+    "App:Senha": "123"
+  }
+}

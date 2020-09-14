@@ -31,7 +31,7 @@ namespace DroneDelivery.Data.Tests.Repositorios
             usuario.AdicionarRefreshToken("refreshToken", DateTime.Now.AddDays(1));
             await _context.AddAsync(usuario);
 
-            var pedido = Pedido.Criar(999, 1000, usuario);
+            var pedido = Pedido.Criar(Guid.NewGuid(), 999, 1000, usuario);
 
             //Act
             await _pedidoRepository.AdicionarAsync(pedido);
@@ -51,8 +51,8 @@ namespace DroneDelivery.Data.Tests.Repositorios
             usuario.AdicionarRefreshToken("refreshToken", DateTime.Now.AddDays(1));
             await _context.AddAsync(usuario);
 
-            var pedido1 = Pedido.Criar(123, 1000, usuario);
-            var pedido2 = Pedido.Criar(456, 1000, usuario);
+            var pedido1 = Pedido.Criar(Guid.NewGuid(), 123, 1000, usuario);
+            var pedido2 = Pedido.Criar(Guid.NewGuid(), 456, 1000, usuario);
 
             await _pedidoRepository.AdicionarAsync(pedido1);
             await _pedidoRepository.AdicionarAsync(pedido2);
@@ -79,7 +79,7 @@ namespace DroneDelivery.Data.Tests.Repositorios
             var drone = Drone.Criar(12000, 5, 40, 100, DroneStatus.EmEntrega);
             await _context.AddAsync(drone);
 
-            var pedido = Pedido.Criar(123, 1000, usuario);
+            var pedido = Pedido.Criar(Guid.NewGuid(), 123, 1000, usuario);
             pedido.AssociarDrone(drone);
             await _context.AddAsync(pedido);
 

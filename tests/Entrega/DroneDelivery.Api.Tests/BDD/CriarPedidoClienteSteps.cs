@@ -1,6 +1,7 @@
 ﻿using DroneDelivery.Api.Tests.Config;
 using DroneDelivery.Application.Commands.Drones;
 using DroneDelivery.Application.Commands.Pedidos;
+using System;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -42,7 +43,7 @@ namespace DroneDelivery.Api.Tests.BDD
         public async Task QuandoEuSolicitarACriacaoDeUmPedido()
         {
 
-            var pedido = new CriarPedidoCommand(10000, 100);
+            var pedido = new CriarPedidoCommand(Guid.NewGuid(), 10000, 100);
 
             await _testsFixture.RealizarLoginApi();
             _testsFixture.Client.AddToken(_testsFixture.Token);
