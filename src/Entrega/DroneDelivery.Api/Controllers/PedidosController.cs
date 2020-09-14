@@ -47,6 +47,7 @@ namespace DroneDelivery.Api.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ApiExplorerSettings(IgnoreApi = true)]
         public async Task<IActionResult> Adicionar(CriarPedidoCommand command)
         {
             var response = await EventBus.SendCommand(command);
