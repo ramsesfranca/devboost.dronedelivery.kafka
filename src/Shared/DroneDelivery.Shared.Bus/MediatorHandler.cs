@@ -2,7 +2,6 @@
 using DroneDelivery.Shared.Domain.Core.Commands;
 using DroneDelivery.Shared.Domain.Core.Domain;
 using DroneDelivery.Shared.Domain.Core.Events;
-using DroneDelivery.Shared.Domain.Core.Events.Pedidos;
 using DroneDelivery.Shared.Domain.Core.Queries;
 using DroneDelivery.Shared.Infra.Interfaces;
 using MediatR;
@@ -40,12 +39,6 @@ namespace DroneDelivery.Shared.Bus
         public async Task Publish<T>(T @event) where T : Event
         {
             var eventType = @event.GetType();
-
-            if (eventType == typeof(PedidoCriadoEvent))
-                await _pagamentoHttpFactory.EnviarPedidoParaPagamento(@event as PedidoCriadoEvent);
-            else if (eventType == typeof(PedidoStatusAtualizadoEvent))
-                await _pedidoHttpFactory.AtualizarPedidoStatus(@event as PedidoStatusAtualizadoEvent);
-
         }
     }
 }

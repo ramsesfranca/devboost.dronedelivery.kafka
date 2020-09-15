@@ -105,6 +105,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AzureFunctions", "AzureFunc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DroneDelivery.PedidoConsumerTrigger", "src\Functions\DroneDelivery.PedidoConsumerTrigger\DroneDelivery.PedidoConsumerTrigger.csproj", "{092BF3B7-584C-417E-AE86-9501B5B2FD6C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DroneDelivery.PagamentoConsumerTrigger", "src\Functions\DroneDelivery.PagamentoConsumerTrigger - Copia\DroneDelivery.PagamentoConsumerTrigger.csproj", "{A0BE6021-1791-45AB-8763-1DB71712B4C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -215,6 +217,10 @@ Global
 		{092BF3B7-584C-417E-AE86-9501B5B2FD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{092BF3B7-584C-417E-AE86-9501B5B2FD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{092BF3B7-584C-417E-AE86-9501B5B2FD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0BE6021-1791-45AB-8763-1DB71712B4C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0BE6021-1791-45AB-8763-1DB71712B4C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0BE6021-1791-45AB-8763-1DB71712B4C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0BE6021-1791-45AB-8763-1DB71712B4C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -266,6 +272,7 @@ Global
 		{41D3DA73-163A-49EB-B17A-8F040FA4DD1E} = {4463E45E-6342-4056-BE49-32B1B10EC337}
 		{3E717016-477F-43D5-880B-9972D2CCCD52} = {53E91903-29F4-40F9-A910-D4DD5B7BD810}
 		{092BF3B7-584C-417E-AE86-9501B5B2FD6C} = {169C1F17-3317-46CB-8956-7437F0850F5C}
+		{A0BE6021-1791-45AB-8763-1DB71712B4C7} = {169C1F17-3317-46CB-8956-7437F0850F5C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {47DA7E87-7CF5-4C6C-A092-C9675E83C77B}

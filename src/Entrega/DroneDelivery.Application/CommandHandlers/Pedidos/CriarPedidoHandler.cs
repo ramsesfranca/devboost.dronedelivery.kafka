@@ -5,7 +5,6 @@ using DroneDelivery.Domain.Models;
 using DroneDelivery.Shared.Domain.Core.Bus;
 using DroneDelivery.Shared.Domain.Core.Domain;
 using DroneDelivery.Shared.Domain.Core.Enums;
-using DroneDelivery.Shared.Domain.Core.Events.Pedidos;
 using DroneDelivery.Shared.Domain.Core.Validator;
 using DroneDelivery.Shared.Utility.Messages;
 using Flunt.Notifications;
@@ -51,7 +50,6 @@ namespace DroneDelivery.Application.CommandHandlers.Pedidos
             pedido.AtualizarStatusPedido(PedidoStatus.AguardandoPagamento);
 
             //publica o evento para o bus
-            await _eventBus.Publish(new PedidoCriadoEvent(pedido.Id, pedido.Valor));
 
             await _unitOfWork.Pedidos.AdicionarAsync(pedido);
             await _unitOfWork.SaveAsync();
